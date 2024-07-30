@@ -18,6 +18,16 @@ function M.are_we_wezterm()
   return term == 'wezterm'
 end
 
+function M.are_we_ghostty()
+  if M.are_we_gui() then
+    return false
+  end
+
+  print(vim.env.TERM_PROGRAM)
+  local term = vim.trim((vim.env.TERM_PROGRAM or ''):lower())
+  return term == 'ghostty'
+end
+
 --- Check if we're in WSL
 ---@return boolean
 function M.is_WSL()

@@ -100,6 +100,8 @@ function M.set_default_multiplexer()
   elseif vim.env.KITTY_LISTEN_ON ~= nil then
     -- Kitty doesn't use $TERM_PROGRAM, and also requires remote control enabled anyway
     config.multiplexer_integration = Multiplexer.kitty
+  elseif term == 'ghostty' then
+    config.multiplexer_integration = Multiplexer.kitty
   end
 
   if type(config.multiplexer_integration) == 'string' then
