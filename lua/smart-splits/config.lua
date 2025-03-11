@@ -101,7 +101,7 @@ function M.set_default_multiplexer()
     -- Kitty doesn't use $TERM_PROGRAM, and also requires remote control enabled anyway
     config.multiplexer_integration = Multiplexer.kitty
   elseif term == 'ghostty' then
-    config.multiplexer_integration = Multiplexer.kitty
+    config.multiplexer_integration = Multiplexer.ghostty
   end
 
   if type(config.multiplexer_integration) == 'string' then
